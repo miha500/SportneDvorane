@@ -36,3 +36,13 @@ Za inštalacijo tega gemfila sva napisala ukaz <tt>bundle install</tt>.
 Za tabelo Users sva uporabila ukaz <tt>rails generate devise:install</tt>.
 Z <tt>rails generate devise user</tt> sva ustvarila osnovnega uporabnika.
 Pognala sva migracijo z <tt>rake db:migrate</tt>.
+
+Povezala sva tabeli Users in Halls. Ustvarila sva tuji ključ z migracijo <tt>rails g migration AddUserToHall user:belongs_to</tt>.
+Migracijo sva pognala z <tt>rake db:migrate</tt>.
+V <tt>app/models/hall.rb</tt> sva dodala <tt>belongs_to :user</tt>.
+V <tt>app/models/user.rb</tt> sva dodala <tt>has_many :halls</tt>.
+
+Povezala sva tabeli Halls in Fields. Ustvarila sva tuji ključ z migracijo <tt>rails g migration AddHallToField hall:belongs_to</tt>.
+Migracijo sva pognala z <tt>rake db:migrate</tt>.
+V <tt>app/models/field.rb</tt> sva dodala <tt>belongs_to :hall</tt>.
+V <tt>app/models/hall.rb</tt> sva dodala <tt>has_many :fields</tt>.
