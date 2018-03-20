@@ -29,7 +29,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+
+
+#gemsi, ki sma jih dodala
 gem 'devise'
+
+#za slike
+gem "paperclip", "~> 6.0.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

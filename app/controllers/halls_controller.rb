@@ -62,6 +62,7 @@ class HallsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_hall
       @hall = Hall.find(params[:id])
@@ -69,6 +70,6 @@ class HallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hall_params
-      params.require(:hall).permit(:title, :text)
+      params.require(:hall).permit(:title, :text, :image)
     end
 end

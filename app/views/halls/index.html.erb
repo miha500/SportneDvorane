@@ -16,6 +16,7 @@
       <tr>
         <td><%= hall.title %></td>
         <td><%= hall.text %></td>
+        <td><%= image_tag hall.image.url(:thumb) %></td>
         <td><%= link_to 'Show', hall %></td>
         <td><%= link_to 'Edit', edit_hall_path(hall) %></td>
         <td><%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
