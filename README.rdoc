@@ -26,3 +26,13 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Ustvarila sva nov projekt z ukazom <tt>rails new SportneDvorane</tt>.
+
+Ustvarila sva tabelo dvoran z <tt>rails generate scaffold Hall title:string text:text</tt> in pognala migracijo z <tt>rake db:migrate</tt>.
+
+Za uporabnike sva v Gemfile dodala vrstico <tt>gem 'devise'</tt>.
+Za inštalacijo tega gemfila sva napisala ukaz <tt>bundle install</tt>.
+Za tabelo Users sva uporabila ukaz <tt>rails generate devise:install</tt>.
+Z <tt>rails generate devise user</tt> sva ustvarila osnovnega uporabnika.
+Pognala sva migracijo z <tt>rake db:migrate</tt>.
