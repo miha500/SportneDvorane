@@ -71,3 +71,4 @@ Nato pa sva dodala nav bar. V <tt> app/views/layouts/application.html.erb</tt> s
 </div>
 </tt>
 
+Za google Login sva dodala v Gemfile <tt>gem "omniauth-google-oauth2", "~> 0.2.1"</tt>.
