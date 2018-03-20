@@ -46,3 +46,28 @@ Povezala sva tabeli Halls in Fields. Ustvarila sva tuji ključ z migracijo <tt>r
 Migracijo sva pognala z <tt>rake db:migrate</tt>.
 V <tt>app/models/field.rb</tt> sva dodala <tt>belongs_to :hall</tt>.
 V <tt>app/models/hall.rb</tt> sva dodala <tt>has_many :fields</tt>.
+
+
+v <tt>app/config/routes.rb</tt> sva dodala <tt>root 'halls#index'</tt> s tem nas preusmeri na začetno stran.
+
+Nato pa sva dodala nav bar. V <tt> app/views/layouts/application.html.erb</tt> sem dodal:
+
+<tt>
+<div>
+
+<%= link_to "Halls", root_path %>
+<ul>
+
+<li><%= link_to "Sign Up", new_user_registration_path %></li>
+
+<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+<li><%= link_to "Login", new_user_session_path %> </li>
+
+</ul>
+
+<p><%= link_to "New Hall", new_hall_path %></p>
+
+</div>
+</tt>
+
