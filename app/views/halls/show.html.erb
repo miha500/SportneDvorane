@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hall.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @hall.text %>
+</p>
+
+<%= link_to 'Edit', edit_hall_path(@hall) %> |
+<%= link_to 'Back', halls_path %>
