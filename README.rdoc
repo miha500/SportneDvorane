@@ -71,3 +71,37 @@ Nato pa sva dodala nav bar. V <tt> app/views/layouts/application.html.erb</tt> s
 </div>
 </tt>
 
+
+Dodajanje slik
+
+Za dodajanje slik knjig sva uporabila paperclip gem. Najprej sva morala naložiti imagemagick za delovanje paperclip gema. To sva storila da sva v terminal vnesela komando
+
+<tt>sudo apt-get install imagemagick</tt>
+
+V gemfile sva dodala <tt>gem "paperclip", "~> 6.0.0"</tt> ter zagnal <tt>bundle</tt> da se je naložil.
+
+v <tt>app/models/hall.rb</tt> sem dodal
+
+ <tt>has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+ 
+ validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/</tt>
+ 
+ Da sva ustvarila migracijo sva v terminal napisala <tt>rails generate paperclip hall image</tt> To spremeni tabelo halls in doda image attachment
+
+Dodamo <tt>rake db:migrate</tt>
+
+Nato sva v <tt>app/views/halls/_form.html.erb</tt> dodala
+
+na vrhu html: { multipart: true }
+
+ter
+
+<div class="field">
+   <%= f.label :image %><br>
+   <%= f.file_field :image %>
+ </div>
+ 
+ 
+ v app/controllers/concerns/halls_controller.rb sva v def book_params dodal :image <tt>params.require(:book).permit(:title, :author, :description, :image)</tt>
+ 
+ Da se bodo slike videle na prvi strani sva v index.html.erb dodala <td><%= image_tag book.image.url(:thumb) %></td>
