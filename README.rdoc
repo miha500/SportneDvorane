@@ -104,4 +104,13 @@ ter
  v app/controllers/concerns/halls_controller.rb sva v def book_params dodal :image <tt>params.require(:book).permit(:title, :author, :description, :image)</tt>
  
  Da se bodo slike videle na prvi strani sva v index.html.erb dodala <td><%= image_tag book.image.url(:thumb) %></td>
+ 
+ 
+ Za delovanje Google logina moramo najprej namestiti ustvariti aplikacijo v Konzoli razvijalcev google. ((((((((UPDATE!))))))) Potem sva dodala gem v Gemfile z vrstico <tt>gem "omniauth-google-oauth2", "~> 0.2.1"</tt> in ustvarila omniauth.rb v mapi config/initializers.
+ V omniauth.rb sva dodala naslednje vrstice: 
+ <tt>OmniAuth.config.logger = Rails.logger
 
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :google_oauth2, 'my Google client id', 'my Google client secret', {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
+end</tt>
+'my Google client id' in 'my Google client secret' moramo zamenjati s številkami ki jih dobimo v https://console.developers.google.com .
