@@ -36,6 +36,12 @@ gem 'devise'
 
 #za slike
 gem 'paperclip', '~> 6.0.0'
+<<<<<<< HEAD
+=======
+
+#Google login
+gem 'omniauth-google-oauth2', '~> 0.2.1'
+>>>>>>> bae6b81111ea71ab56410705a6422a7de771e79c
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
