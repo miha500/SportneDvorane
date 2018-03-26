@@ -35,7 +35,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 #za slike
-gem "paperclip", "~> 6.0.0
+gem 'paperclip', '~> 6.0.0'
+
+#Google login
+gem 'omniauth-google-oauth2', '~> 0.2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
