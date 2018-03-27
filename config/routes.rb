@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :fields 
   end
 
-   root 'halls#index'
+  root 'halls#index'
    
   #Google Stuff
   
