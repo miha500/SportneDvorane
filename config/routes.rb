@@ -1,5 +1,11 @@
 
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'home/show'
+
   resources :fields
   devise_for :users
   resources :halls
@@ -8,6 +14,18 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'halls#index'
+   
+   ##Google Stuff
+  GoogleAuthExample::Application.routes.draw do
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :sessions, only: [:create, :destroy]
+  resource :home, only: [:show]
+
+  root to: "home#show"
+end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
