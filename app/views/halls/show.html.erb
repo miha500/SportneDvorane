@@ -10,5 +10,13 @@
   <%= @hall.text %>
 </p>
 
+<div>
+    <%= render @hall.fields %>
+    <div>
+        <%= render "fields/form" %>
+        </div>
+        </div>
+
+
 <%= link_to 'Edit', edit_hall_path(@hall) %> |
 <%= link_to 'Back', halls_path %>

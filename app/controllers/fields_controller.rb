@@ -24,11 +24,12 @@ class FieldsController < ApplicationController
   # POST /fields
   # POST /fields.json
   def create
-    @field = Field.new(field_params)
+    @hall = Hall.find(params[:hall_id])
+    @field = @hall.fields.create(params[:field].permit(:title, :text))
 
     respond_to do |format|
       if @field.save
-        format.html { redirect_to @field, notice: 'Field was successfully created.' }
+        format.html { redirect_to hall_path(@hall), notice: 'Field was successfully created.' }
         format.json { render :show, status: :created, location: @field }
       else
         format.html { render :new }
@@ -54,11 +55,8 @@ class FieldsController < ApplicationController
   # DELETE /fields/1
   # DELETE /fields/1.json
   def destroy
-    @field.destroy
-    respond_to do |format|
-      format.html { redirect_to fields_url, notice: 'Field was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+ @field.destroy
+  redirect_to hall_path(@hall = Hall.find(params[:hall_id]))
   end
 
   private
