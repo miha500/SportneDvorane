@@ -14,7 +14,7 @@ class HallsController < ApplicationController
 
   # GET /halls/new
   def new
-    @hall = Hall.new
+    @hall = current_user.halls.build
   end
 
   # GET /halls/1/edit
@@ -24,7 +24,7 @@ class HallsController < ApplicationController
   # POST /halls
   # POST /halls.json
   def create
-    @hall = Hall.new(hall_params)
+    @hall = current_user.halls.build(hall_params)
 
     respond_to do |format|
       if @hall.save
