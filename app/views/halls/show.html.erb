@@ -10,13 +10,20 @@
   <%= @hall.text %>
 </p>
 
+<h2> Igrišča </h2>
+
 <div>
     <%= render @hall.fields %>
-    <div>
-        <%= render "fields/form" %>
-        </div>
-        </div>
+</div>
 
+<% if user_signed_in? %> 
+<% if @hall.user_id == current_user.id %>
+<div>
+    <%= render "fields/form" %> 
+</div>
+
+<% end %>
+<% end %>
 
 <div>
 <h3> Post a comment! </h3>
