@@ -1,3 +1,4 @@
 <p><%=comment.content %></p>
 
-<%= link_to "Edit", edit_hall_comment_path(comment.hall, comment) if comment.id %>
+<%= link_to "Edit", edit_hall_comment_path(comment.hall, comment)  %>
+<%= link_to "Delete", hall_comment_path(comment.hall, comment), method: :delete, data: {confirm: "Are you sure?"}%>
