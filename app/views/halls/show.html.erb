@@ -19,13 +19,13 @@
 
 
 <div>
-<h3> Nigga reply </h3>
-    <%= render 'comments/form' %>
+<h3> Post a comment! </h3>
+    <%= render @hall.comments%>
 </div>
 
 <div>
-<h3> Bruh </h3>
-<%= render @hall.comments%>
+<h3> Comments </h3>
+<%= render 'comments/form' %>
 </div>
 <%= link_to 'Edit', edit_hall_path(@hall) %> |
 <%= link_to 'Back', halls_path %>

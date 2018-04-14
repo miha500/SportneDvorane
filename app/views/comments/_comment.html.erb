@@ -1,1 +1,3 @@
 <p><%=comment.content %></p>
+
+<%= link_to "Edit", edit_hall_comment_path(comment.hall, comment) if comment.id %>
