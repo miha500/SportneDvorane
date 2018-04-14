@@ -1,30 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Halls</h1>
 
-<table>
+ <% @halls.each do |hall| %>
+ <div>
+<table class="grid-item">
+
   <thead>
+
     <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
+      <th><%= hall.title %></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @halls.each do |hall| %>
+   
       <tr>
-        <td><%= hall.title %></td>
-        <td><%= hall.text %></td>
-        <td><%= image_tag hall.image.url(:thumb) %></td>
-        <td><%= link_to 'Show', hall %></td>
-        <td><%= link_to 'Edit', edit_hall_path(hall) %></td>
-        <td><%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <a href="/halls/<%= hall.id %>">
+        <%= image_tag hall.image.url(:thumb)%></a>
+      </td>
       </tr>
-    <% end %>
   </tbody>
+
 </table>
+
+  <% end %>
 
 <br>
 
-<%= link_to 'New Hall', new_hall_path %>
+</div>
