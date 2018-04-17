@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # helper_method :current_user
 
-  #def current_user
-   # @current_user ||= Google_user.find(session[:google_user_id]) if session[:google_user_id]
-  #end
+  def current_user
+    @current_user ||= Google_user.find(session[:google_user_id]) if session[:google_user_id]
+  end
 end
