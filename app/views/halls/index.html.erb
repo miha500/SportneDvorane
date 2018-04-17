@@ -1,30 +1,30 @@
-<div class="container">
-<div class="row text-center">
 <p id="notice"><%= notice %></p>
 
-
  <% @halls.each do |hall| %>
+ <div>
+<table class="grid-item">
 
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="card">
- <img class="card-img-top" src="http://placehold.it/500x325" alt="">
- <div class="card-body">
-   <h4 class="card-title">><%= hall.title %></h4>
- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-</div>
-      <div class="card-footer">
-      <span>  <%= link_to 'More Info!', hall, SportneDvorane
-      class: "btn btn-primary" ></span>
-      </div>
-     
-    
-  
-        <a  href="/halls/<%= hall.id %>">
-        <%= image_tag hall.image.url(:medium)%></a>
- 
+  <thead>
+
+    <tr>
+      <th><%= hall.title %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   
+      <tr>
+        <td>
+        <a href="/halls/<%= hall.id %>">
+        <%= image_tag hall.image.url(:medium), :class => "index_img" %></a>
+      </td>
+      </tr>
+  </tbody>
+
+</table>
 
   <% end %>
-</div>
-</div>
-</div>
+
+<br>
+
 </div>
