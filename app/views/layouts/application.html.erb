@@ -7,8 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="container">
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand"><%= link_to "Sportne Dvorane", root_path %></span>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            <% if !user_signed_in? %>
+              <li><span><%= link_to "Sign Up", new_user_registration_path %></span></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li><span><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></span></li>
+            <% else %>
+              <li><span><%= link_to "Login", new_user_session_path %></span></li>
+            <% end %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="active"><span><%= link_to "New Hall", new_hall_path %></span></li>
+            <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
 
+</div>
 
+<!--
 <div>
 
 <%= link_to "Sportne Dvorane", root_path %>
@@ -27,7 +61,7 @@
 <% end %>
 
 </div>
-
+-->
 
 <%=  yield %>
 

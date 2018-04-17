@@ -59,5 +59,9 @@ group :development do
   
   #console ne dela drgac
   gem 'rb-readline'
+  
+  
+  gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+  
 end
 
