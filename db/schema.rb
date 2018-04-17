@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410074038) do
+ActiveRecord::Schema.define(version: 20180417073900) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180410074038) do
 
   add_index "fields", ["hall_id"], name: "index_fields_on_hall_id"
 
-  create_table "google_users", force: :cascade do |t|
+  create_table "googleusers", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
