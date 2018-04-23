@@ -37,8 +37,9 @@ gem 'devise'
 #za slike
 gem 'paperclip', '~> 6.0.0'
 
-#Google login
-gem 'omniauth-google-oauth2', '~> 0.2.1'
+#Facebook login
+# gem 'omniauth-facebook'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 
 # Use Capistrano for deployment
