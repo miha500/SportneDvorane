@@ -11,8 +11,8 @@
   <%= @hall.text %>
 </p>
 
-<h2> Add Fields </h2>
-
+<h2> Fields </h2>
+<br>
 
 <div>
     <%= render @hall.fields %>
@@ -30,12 +30,12 @@
 <% end %>
 
 <div>
-<h3> Post a comment! </h3>
+<h3> Comments </h3>
     <%= render @hall.comments%>
 </div>
 
 <div>
-<h3> Comments </h3>
+<h3> Post a comment! </h3>
 <%= render 'comments/form' %>
 </div>
 
