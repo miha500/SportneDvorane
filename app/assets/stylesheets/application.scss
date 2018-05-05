@@ -1,2 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.imgg {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+    height: 200px;
+
+}
+
+.top-buffer { margin-top:20px; }
+
+* {
+   font-size: 18px;
+ }
+ 
+ .title_center{
+width:150px; 
+margin:0 auto;
+}

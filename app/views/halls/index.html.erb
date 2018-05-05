@@ -1,30 +1,22 @@
+<div class="container">
+<div class="row">
 <p id="notice"><%= notice %></p>
 
  <% @halls.each do |hall| %>
- <div>
-<table class="grid-item">
 
-  <thead>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <span><%= image_tag hall.image.url(:medium), :class => "imgg" %></span>
+            <div class="card-body">
+              <h4 class="card-title">
+                <span class="textt"><%= link_to hall.title, hall_path(hall) %></span>
+              </h4>
+              <span><%= hall.text.first(100) %></span>
+            </div>
+          </div>
+        </div>
+               
+<% end %>
 
-    <tr>
-      <th><%= hall.title %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-   
-      <tr>
-        <td>
-        <a href="/halls/<%= hall.id %>">
-        <%= image_tag hall.image.url(:medium), :class => "index_img" %></a>
-      </td>
-      </tr>
-  </tbody>
-
-</table>
-
-  <% end %>
-
-<br>
-
-</div>
+ </div>
+ </div>
