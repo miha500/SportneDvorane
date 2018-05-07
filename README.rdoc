@@ -108,3 +108,5 @@ ter
 HEROKU
 Najprej sem uporabil komando <tt>wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh</tt>, da sem inštaliral Heroku.
 Potem sem se prijavil z <tt>heroku login</tt> in sledil navodilom na strani: https://devcenter.heroku.com/articles/getting-started-with-rails4
+
+*Fix(če ne dela bundle = sudo apt-get install libpq-dev )
