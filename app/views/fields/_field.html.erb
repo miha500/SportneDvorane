@@ -8,7 +8,7 @@
             <% if @hall.user_id == current_user.id %>
             <%= link_to "Delete", hall_field_path(@hall, field.id), method: :delete, data: { confirm: "Are you sure?" } %>
             <% end %>
-            
+            <% end %>
             </div>
             <br>
         
